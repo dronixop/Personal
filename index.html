@@ -9,21 +9,39 @@
 <body>
     <div class="container">
         <h1>Will you be my Valentine?</h1>
+
         <div class="buttons">
             <button class="yes-button" onclick="handleYesClick()">Yes</button>
             <button class="no-button" onclick="handleNoClick()">No</button>
         </div>
+
         <div class="gif_container">
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
         </div>
+
+        <!-- 🎵 Music Button -->
+        <button onclick="toggleMusic()" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; border-radius: 8px; background-color: #ff6f91; color: white; border: none; cursor: pointer;">
+            🎵 Play / Pause Music
+        </button>
     </div>
 
     <!-- 🎵 Background Music -->
-    <audio autoplay loop>
+    <audio id="bg-music" loop>
         <source src="romantic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+    <script>
+        const music = document.getElementById("bg-music");
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script>
 </body>
 </html>
